@@ -1,0 +1,20 @@
+name: iOS starter workflow
+
+on:
+  push:
+    branches: [ "dav-y-patch-3" ]
+  pull_request:
+    branches: [ "dav-y-patch-3" ]
+
+jobs:
+  build:
+    name: Build iOS IPA
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: iOS Build Action
+        uses: yukiarrr/ios-build-action@v1.5.0
+
+        
